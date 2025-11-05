@@ -1,0 +1,7 @@
+#contact-page > div {
+    flex:1;
+    margin:0 20px;
+    background:rgba(100,149,237,.2);
+    padding:20px;
+    border-radius:5px;
+}
