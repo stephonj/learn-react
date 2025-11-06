@@ -6,7 +6,6 @@ const House = (props) => {
     const [showDialog, setShowDialog] = useState(false);
 
     const showHouseDetails = () => {
-        console.log("hi");
         setShowDialog(true);
     }
 
@@ -25,7 +24,7 @@ const House = (props) => {
                     features={props.features}/>
             ):("")}
             <section className="house" onClick={showHouseDetails}>
-                <img src={"https://portiaportia.github.io/json/images/house-plans/"+props.main_image} alt="house" />
+                <img src={"https://server-houses-fall-2025.onrender.com/images/"+props.main_image} alt="house" />
                 <div className="house-description">
                     <h1>{props.name}</h1>
                     <p>{props.bedrooms} Bedrooms</p>

@@ -9,7 +9,7 @@ const HouseList = (props) => {
     //after page has loaded
     useEffect(()=>{
         const loadHouses = async() => {
-            const response = await axios.get("https://portiaportia.github.io/json/house-plans.json");
+            const response = await axios.get("https://server-houses-fall-2025.onrender.com/api/houses");
             setHouses(response.data.splice(0,props.num));
         };
 
