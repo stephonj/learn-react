@@ -24,7 +24,7 @@ const House = (props) => {
                     features={props.features}/>
             ):("")}
             <section className="house" onClick={showHouseDetails}>
-                <img src={"https://server-houses-fall-2025.onrender.com/images/"+props.main_image} alt="house" />
+                <img src={"http://localhost:3001/images/"+props.main_image} alt="house" />
                 <div className="house-description">
                     <h1>{props.name}</h1>
                     <p>{props.bedrooms} Bedrooms</p>
