@@ -1,0 +1,43 @@
+#house-list {
+    justify-content: space-around;
+}
+
+.house {
+    margin:10px;
+    background:#fbe1cb;
+    border-radius:4px;
+}
+
+.house-description {
+    padding:0 10px;
+}
+
+.house h1 {
+    font-size:1.2em;
+}
+
+.house img {
+    max-width:100%;
+    display:block;
+    margin:auto;
+    border-radius:5px 5px 0 0;
+}
+
+#edit-links {
+    font-size:1.5em;
+    line-height:1.5em;
+    padding-top:14px;
+    padding-left:10px;
+}
+
+#edit-links a {
+    text-decoration: none;
+    padding:5px;
+    color:#10203B;
+}
+
+@media screen and (min-width: 768px) {
+    .house {
+        width:30%;
+    }
+}
