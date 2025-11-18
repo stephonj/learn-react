@@ -33,7 +33,7 @@ const HouseList = (props) => {
 
     return (
         <>
-            <button id="add-house" onClick={openAddDialog}>+</button>
+            <button id="add-house-button" onClick={openAddDialog}>+</button>
 
             {showAddDialog?(<AddHouse 
                                 closeAddDialog={closeAddDialog} 
@@ -43,7 +43,7 @@ const HouseList = (props) => {
             <div id="house-list" className="columns">
                 {houses.map((house)=>(
                     <House  key={house._id} 
-                            id={house._id}
+                            _id={house._id}
                             name={house.name} 
                             size={house.size}
                             bedrooms={house.bedrooms}

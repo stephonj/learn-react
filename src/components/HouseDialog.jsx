@@ -1,6 +1,22 @@
 import "./../css/Dialog.css";
+import React, { useState } from "react";
+import HouseDetailsDialog from "./HouseDetailsDialog";
+import HouseEditDialog from "./HouseEditDialog";
+import HouseDeleteDialog from "./HouseDeleteDialog";
 
 const HouseDialog = (props) => {
+    const [showContent, setShowContent] = useState("details");
+
+    const showEdit = (e) => {
+        e.preventDefault();
+        setShowContent("edit");
+    }
+
+    const showDelete = (e) => {
+        e.preventDefault();
+        setShowContent("delete");
+    }
+
     return (
         <div id="house-dialog" className="w3-modal">
             <div className="w3-modal-content">
@@ -12,15 +28,35 @@ const HouseDialog = (props) => {
                     >
                         &times;
                     </span>
-                    <div class="columns">
-                        <img src={"https://portiaportia.github.io/json/images/house-plans/"+props.main_image} alt="house" />
-                        <div id="dialog-content">
-                            <h3>{props.name}</h3>
-                            <p>{props.bedrooms} Bedrooms</p>
-                            <p>{props.bathrooms} Bathrooms</p>
-                            <p>Size: {props.size} sqft</p>
-                            <p>Features: {props.features.join(", ")}</p>
-                        </div>
+                    <div id="house-dialog-content">
+                        {showContent==="details"?(
+                            <HouseDetailsDialog 
+                                showEdit={showEdit}
+                                showDelete={showDelete} 
+                                name={props.name}
+                                bedrooms={props.bedrooms}
+                                size={props.size}
+                                bathrooms={props.bathrooms}
+                                main_image={props.main_image}
+                                features={props.features}/>
+                        ):showContent === "edit"?(
+                            <HouseEditDialog 
+                                _id={props._id}
+                                name={props.name}
+                                size={props.size}
+                                main_image={props.main_image}
+                                bedrooms={props.bedrooms}
+                                bathrooms={props.bathrooms}
+                                closeEditDialog = {props.closeHouseDialog}
+                                updateHouse={props.updateHouse} />
+                        ):(
+                            <HouseDeleteDialog 
+                                _id={props._id}
+                                name={props.name}
+                                closeDeleteDialog = {props.closeHouseDialog}
+                                hideHouse={props.hideHouse} />
+                            )}
+                        
                     </div>
                 </div>
             </div>
