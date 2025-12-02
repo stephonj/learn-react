@@ -47,6 +47,7 @@ const HouseDialog = (props) => {
                                 main_image={props.main_image}
                                 bedrooms={props.bedrooms}
                                 bathrooms={props.bathrooms}
+                                features={props.features}
                                 closeEditDialog = {props.closeHouseDialog}
                                 updateHouse={props.updateHouse} />
                         ):(

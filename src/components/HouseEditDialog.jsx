@@ -73,6 +73,10 @@ const HouseEditDailog = (props) => {
                 required
               />
             </p>
+            <p>
+                <label htmlFor="features">Features:</label>
+                <textarea type="text" id="reatures" name="features" defaultValue={props.features}></textarea>
+            </p>
 
             <section>
                     <div>
